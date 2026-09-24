@@ -238,6 +238,12 @@ LintLang is an engineering evolution of Hermes Labs’ research into structural 
 | Contribution | [CONTRIBUTING.md](CONTRIBUTING.md) |
 | Security | [SECURITY.md](SECURITY.md) |
 
+## 🎬 Project Visualization
+
+![Gource development visualization](gource/gource.gif)
+
+_Video genereerd door de [Gource workflow](.github/workflows/gource.yml). De workflow genereert een MP4-video en een GIF-thumbnail die automatisch wordt bijgewerkt bij elke commit._
+
 ## Contributing
 
 Bug reports, disputed findings, reproducible false positives, documentation corrections, and focused contributions are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.

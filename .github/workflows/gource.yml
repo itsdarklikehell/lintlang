@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
           persist-credentials: true
@@ -51,14 +51,14 @@ jobs:
             ./gource/gource.gif
 
       - name: Upload video artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: gource-video
           path: ./gource/gource.mp4
           retention-days: 90
 
       - name: Upload GIF artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: gource-gif
           path: ./gource/gource.gif

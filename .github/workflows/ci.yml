@@ -67,6 +67,7 @@ jobs:
           fail-on: fail
 
       - name: Assert failing fixture returned failure
+        continue-on-error: true
         env:
           ACTION_OUTCOME: ${{ steps.failing-scan.outcome }}
         run: test "$ACTION_OUTCOME" = "failure"

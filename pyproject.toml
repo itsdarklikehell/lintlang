@@ -1,6 +1,12 @@
 [build-system]
-requires = ["hatchling==1.27.0"]
-build-backend = "hatchling==1.27.0"
+# `requires` takes PEP 508 requirement specs; `build-backend` takes the import
+# path of the backend module. Pinning a version into build-backend (as
+# "hatchling==1.27.0" did) makes pip try to import a module literally named
+# "hatchling==1.27.0", so `pip install -e .` died with:
+#   BackendUnavailable: Cannot import 'hatchling==1.27.0'
+# That broke the proof-loop benchmark's "Install benchmark subject" step.
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
 
 [project]
 name = "lintlang"

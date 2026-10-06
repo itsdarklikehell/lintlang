@@ -41,7 +41,12 @@ jobs:
           persist-credentials: false
 
       - name: "Run analysis"
-        uses: ossf/scorecard-action@v2 # v2.4.4
+        # Pin to the full commit SHA: ossf/scorecard-action publishes no moving
+        # `v2` tag, so `@v2` failed with
+        #   Unable to resolve action `ossf/scorecard-action@v2`,
+        #   unable to find version `v2`
+        # SHA below is v2.4.4, matching upstream hermes-labs-ai/lintlang.
+        uses: ossf/scorecard-action@2d1146689b8cda280b9bc96326124645441f03bc # v2.4.4
         with:
           results_file: results.sarif
           results_format: sarif

@@ -1,0 +1,22 @@
+# Labeler config — the Pull Request Labeler workflow reads this file, but it
+# was never added, so every run failed with:
+#   The config file was not found at .github/labeler.yml
+#   HttpError: Not Found
+# Labels below already exist in this repository.
+# Docs: https://github.com/actions/labeler
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file: ['**/*.md', 'docs/**']
+
+enhancement:
+  - changed-files:
+      - any-glob-to-any-file: ['src/lintlang/**']
+
+bug:
+  - changed-files:
+      - any-glob-to-any-file: ['tests/**']
+
+accessibility:
+  - changed-files:
+      - any-glob-to-any-file: ['.github/workflows/**', '.github/actions/**']
